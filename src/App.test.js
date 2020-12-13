@@ -1,6 +1,10 @@
+// @ts-check
+import { Suspense } from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import { Page } from "./App";
 import { StoreProvider } from "./store";
+import { I18nextProvider } from "react-i18next";
+import { i18n } from "./setupTestsI18n";
 
 const initialState = {
   togglevault: {
@@ -8,12 +12,16 @@ const initialState = {
   },
 };
 
-test("renders learn react link", () => {
+test("renders learn react link", async () => {
   render(
     <StoreProvider initialState={initialState} reducer={() => {}}>
-      <App />
+      <I18nextProvider i18n={i18n}>
+        <Suspense fallback="test loading">
+          <Page />
+        </Suspense>
+      </I18nextProvider>
     </StoreProvider>
   );
-  const clickElement = screen.getByText(/Click to switch animation/i);
+  const clickElement = await screen.findByText(/🍞 Mold/i);
   expect(clickElement).toBeInTheDocument();
 });

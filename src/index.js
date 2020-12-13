@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StoreProvider, initialState, mainReducer } from "./store";
 import { StateInspector } from "reinspect";
+import "./i18n";
 
 ReactDOM.render(
   <React.StrictMode>

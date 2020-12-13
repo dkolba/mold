@@ -1,3 +1,4 @@
+// @ts-check
 import { toggleReducer } from "./reducer";
 import { togglevault } from "./index";
 import { toggle } from "./creator";

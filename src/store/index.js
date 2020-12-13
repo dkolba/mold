@@ -1,4 +1,4 @@
-//@ts-check
+// @ts-check
 import React, { createContext, useContext, useMemo } from "react";
 import { useReducer } from "reinspect";
 import effect from "./effect";
