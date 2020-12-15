@@ -7,14 +7,23 @@ import reportWebVitals from "./reportWebVitals";
 import { StoreProvider, initialState, mainReducer } from "./store";
 import { StateInspector } from "reinspect";
 import "./i18n";
+import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
+import { Client as Styletron } from "styletron-engine-atomic";
+
+const debug =
+  process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
+
+const engine = new Styletron();
 
 ReactDOM.render(
   <React.StrictMode>
-    <StateInspector name="App">
-      <StoreProvider initialState={initialState} reducer={mainReducer}>
-        <App />
-      </StoreProvider>
-    </StateInspector>
+    <StyletronProvider value={engine} debug={debug} debugAfterHydration>
+      <StateInspector name="App">
+        <StoreProvider initialState={initialState} reducer={mainReducer}>
+          <App />
+        </StoreProvider>
+      </StateInspector>
+    </StyletronProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
