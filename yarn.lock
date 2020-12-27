@@ -2141,7 +2141,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^5.11.4":
+"@testing-library/jest-dom@npm:^5.11.6":
   version: 5.11.6
   resolution: "@testing-library/jest-dom@npm:5.11.6"
   dependencies:
@@ -2157,7 +2157,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react@npm:^11.1.0":
+"@testing-library/react@npm:^11.2.2":
   version: 11.2.2
   resolution: "@testing-library/react@npm:11.2.2"
   dependencies:
@@ -2170,14 +2170,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/user-event@npm:^12.1.10":
-  version: 12.5.0
-  resolution: "@testing-library/user-event@npm:12.5.0"
+"@testing-library/user-event@npm:^12.6.0":
+  version: 12.6.0
+  resolution: "@testing-library/user-event@npm:12.6.0"
   dependencies:
-    "@babel/runtime": ^7.10.2
+    "@babel/runtime": ^7.12.5
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
-  checksum: e8af3fc200e53dfa93111f3341c4ccffc3f85e6024b98551b1feae5b98d69e9252fe452086516916367330f0e34de5320dc4456f39bf0730c09d85451654616d
+  checksum: d6ad1876131b934137794a2b910f3f875ade748c3f6bd6e210089f740937d6ab8aa7d80201dcdaacdc7e208a69a807fbbe64cbd2c849449c23afa34dd5742f54
   languageName: node
   linkType: hard
 
@@ -9656,22 +9656,22 @@ fsevents@~2.1.2:
   version: 0.0.0-use.local
   resolution: "mold@workspace:."
   dependencies:
-    "@testing-library/jest-dom": ^5.11.4
-    "@testing-library/react": ^11.1.0
-    "@testing-library/user-event": ^12.1.10
+    "@testing-library/jest-dom": ^5.11.6
+    "@testing-library/react": ^11.2.2
+    "@testing-library/user-event": ^12.6.0
     eslint-config-react-app: ^6.0.0
     i18next: ^19.8.4
     i18next-browser-languagedetector: ^6.0.1
     i18next-http-backend: ^1.0.21
     react: ^17.0.1
     react-dom: ^17.0.1
-    react-i18next: ^11.8.3
+    react-i18next: ^11.8.4
     react-refresh: ^0.9.0
-    react-scripts: 4.0.1
+    react-scripts: ^4.0.1
     reinspect: ^1.1.0
     styletron-engine-atomic: ^1.4.6
     styletron-react: ^5.2.7
-    web-vitals: ^0.2.4
+    web-vitals: ^1.0.1
   languageName: unknown
   linkType: soft
 
@@ -11916,16 +11916,16 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:^11.8.3":
-  version: 11.8.3
-  resolution: "react-i18next@npm:11.8.3"
+"react-i18next@npm:^11.8.4":
+  version: 11.8.4
+  resolution: "react-i18next@npm:11.8.4"
   dependencies:
     "@babel/runtime": ^7.3.1
     html-parse-stringify2: 2.0.1
   peerDependencies:
     i18next: ">= 19.0.0"
     react: ">= 16.8.0"
-  checksum: 4a74e81264bf43a3bb87f512ace32a0bf0eddbd012ee60a61bbfe591c8c057708293ab5697837e9ba8558218cb5964284b2b46252ebf86c1af8c37e446c90ea2
+  checksum: bbe7e5f2be0d51ac6eecc7993006991fbc90718a03b378b4c1236aad72e2541b8f4f9dfc4aacde5bab24e5e95d0be2c1b16c298d0c69e7c1442e635d19eddaf5
   languageName: node
   linkType: hard
 
@@ -11957,7 +11957,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-scripts@npm:4.0.1":
+"react-scripts@npm:^4.0.1":
   version: 4.0.1
   resolution: "react-scripts@npm:4.0.1"
   dependencies:
@@ -14641,10 +14641,10 @@ resolve@1.18.1:
   languageName: node
   linkType: hard
 
-"web-vitals@npm:^0.2.4":
-  version: 0.2.4
-  resolution: "web-vitals@npm:0.2.4"
-  checksum: f7565075a9a57428656d848ba48fd85dfebe6af1a82c77f947b5112838b6e14d0d76768f438e6b25cef3fb57f8d5b3595b0bbc20e2c9bdf9761fd0a2c138ca61
+"web-vitals@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "web-vitals@npm:1.0.1"
+  checksum: 2c6de484c233b45f267b75ae81daab614e61ea1d8ece57c4bde373d71be919993248f4d203d9f49618971c48857ba4988e7a37cc5337708c6329e5651fc2aaa8
   languageName: node
   linkType: hard
 
