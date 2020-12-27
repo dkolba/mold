@@ -16,6 +16,6 @@ jobs:
         run: yarn build
 
       - name: Test
-        run: npm run test:ci
+        run: yarn run test:ci
         env:
           CI: true
