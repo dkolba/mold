@@ -11,6 +11,8 @@
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
+!.yarn/unplugged
+!.yarn/build-state.yml
 
 # testing
 /coverage
