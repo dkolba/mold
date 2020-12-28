@@ -62,7 +62,7 @@
     "src/**/*.{js,jsx,json,css,md}": [
       "prettier --write",
       "eslint --fix src/",
-      "yarn run test:husky --"
+      "npm run test:husky --"
     ]
   }
 }
