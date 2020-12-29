@@ -1,5 +1,6 @@
 import { cloneElement, Children } from "react";
 import { useStyletron } from "styletron-react";
+import { MascaraPropTypes } from "./types";
 
 const ImgMascara = (props) => {
   const { children, isToggled } = props;
@@ -60,4 +61,7 @@ const ImgMascara = (props) => {
     </div>
   );
 };
+
+ImgMascara.propTypes = MascaraPropTypes;
+
 export default ImgMascara;

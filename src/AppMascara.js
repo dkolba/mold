@@ -1,6 +1,6 @@
 // @ts-check
-
 import { useStyletron } from "styletron-react";
+import { MascaraPropTypes } from "./types";
 
 const AppMascara = (props) => {
   const [css] = useStyletron();
@@ -12,4 +12,7 @@ const AppMascara = (props) => {
 
   return <div className={styles}>{children}</div>;
 };
+
+AppMascara.propTypes = MascaraPropTypes;
+
 export default AppMascara;

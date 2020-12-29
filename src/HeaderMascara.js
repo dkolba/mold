@@ -1,6 +1,6 @@
 // @ts-check
-
 import { useStyletron } from "styletron-react";
+import { MascaraPropTypes } from "./types";
 
 const HeaderMascara = (props) => {
   const [css] = useStyletron();
@@ -18,4 +18,7 @@ const HeaderMascara = (props) => {
   });
   return <header className={headerStyle}>{children}</header>;
 };
+
+HeaderMascara.propTypes = MascaraPropTypes;
+
 export default HeaderMascara;

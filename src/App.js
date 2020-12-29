@@ -1,9 +1,9 @@
 // @ts-check
+import { useTranslation } from "react-i18next";
 import { Suspense } from "react";
-import logo from "./logo.svg";
 import { useStore } from "./store";
 import { toggle } from "./store/creator";
-import { useTranslation } from "react-i18next";
+import logo from "./logo.svg";
 import AppMascara from "./AppMascara";
 import HeaderMascara from "./HeaderMascara";
 import ImgMascara from "./ImgMascara";
@@ -13,7 +13,7 @@ export const Page = () => {
   const { isToggled } = togglevault;
   const { t, i18n } = useTranslation();
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     dispatch(toggle());
   };
 
@@ -21,16 +21,31 @@ export const Page = () => {
     i18n.changeLanguage(lng);
   };
 
+  const onKeyPressHandler = () => {
+    console.log("Fill me with logic");
+  };
+
   return (
     <AppMascara>
       <HeaderMascara>
-        <ImgMascara {...{ isToggled }}>
-          <img src={logo} alt="logo" onClick={handleClick} />
+        <ImgMascara onClick={handleClick} {...{ isToggled }}>
+          <img src={logo} alt="logo" />
         </ImgMascara>
         <h1>🍞 Mold</h1>
-        <p onClick={handleClick}>{t("changeanimation")}</p>
-        <button onClick={() => changeLanguage("de")}>de</button>
-        <button onClick={() => changeLanguage("en")}>en</button>
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={handleClick}
+          onKeyPress={onKeyPressHandler}
+        >
+          <p>{t("changeanimation")}</p>
+        </div>
+        <button type="button" onClick={() => changeLanguage("de")}>
+          de
+        </button>
+        <button type="button" onClick={() => changeLanguage("en")}>
+          en
+        </button>
       </HeaderMascara>
     </AppMascara>
   );
@@ -38,12 +53,10 @@ export const Page = () => {
 
 const Loader = () => <div>loading...</div>;
 
-const App = () => {
-  return (
-    <Suspense fallback={<Loader />}>
-      <Page />
-    </Suspense>
-  );
-};
+const App = () => (
+  <Suspense fallback={<Loader />}>
+    <Page />
+  </Suspense>
+);
 
 export default App;

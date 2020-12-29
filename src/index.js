@@ -2,16 +2,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { StoreProvider, initialState, mainReducer } from "./store";
 import { StateInspector } from "reinspect";
-import "./i18n";
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
+import { initialState } from "./store/state";
+import { StoreProvider, mainReducer } from "./store";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "./i18n";
 
 const debug =
-  process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
+  process.env.NODE_ENV === "production" ? undefined : new DebugEngine();
 
 const engine = new Styletron();
 
