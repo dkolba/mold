@@ -14,3 +14,5 @@ const toggleReducer = (state, action) => {
 };
 
 export { toggleReducer };
+
+export default toggleReducer;

@@ -1,6 +1,6 @@
 // @ts-check
 import { toggleReducer } from "./reducer";
-import { togglevault } from "./index";
+import { togglevault } from "./state";
 import { toggle } from "./creator";
 
 describe("File reducer", () => {

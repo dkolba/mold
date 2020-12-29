@@ -3,31 +3,22 @@ import React, { createContext, useContext, useRef } from "react";
 import { useReducer } from "reinspect";
 import effect from "./effect";
 import config from "../config";
-
+import { storeProviderPropTypes } from "../types";
 import { toggleReducer } from "./reducer";
+
 export const StoreContext = createContext(null);
 
-export const togglevault = { isToggled: false };
-
-export const initialState = { togglevault };
-
-export const mainReducer = ({ togglevault }, action) => {
-  return {
-    togglevault: toggleReducer(togglevault, action),
-  };
-};
+export const mainReducer = ({ togglevault }, action) => ({
+  togglevault: toggleReducer(togglevault, action),
+});
 // TODO: check if this is really needed by reinspect
-const init = (initialState) => {
-  return initialState;
-};
+const init = (initialState) => initialState;
 
 const useStableFn = (fn) => {
   const ref = useRef(fn);
   ref.current = fn;
 
-  const wrapper = (...args) => {
-    return ref.current.apply(this, args);
-  };
+  const wrapper = (...args) => ref.current.apply(this, args);
 
   return useRef(wrapper).current;
 };
@@ -41,6 +32,7 @@ export const StoreProvider = ({ reducer, initialState, children }) => {
   );
 
   const stableDispatch = useStableFn(dispatch);
+  // @ts-ignore
   const effectDispatch = effect(stableDispatch, globalstore);
 
   return (
@@ -55,3 +47,4 @@ export const useStore = () => {
   const stableDispatch = useStableFn(dispatcher);
   return [store, stableDispatch];
 };
+StoreProvider.propTypes = storeProviderPropTypes;

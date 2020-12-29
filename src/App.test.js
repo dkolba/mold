@@ -1,10 +1,10 @@
 // @ts-check
 import { Suspense } from "react";
 import { render, screen } from "@testing-library/react";
+import { I18nextProvider } from "react-i18next";
+import i18n from "./setupTestsI18n";
 import { Page } from "./App";
 import { StoreProvider } from "./store";
-import { I18nextProvider } from "react-i18next";
-import { i18n } from "./setupTestsI18n";
 
 const initialState = {
   togglevault: {
